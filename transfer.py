@@ -62,14 +62,6 @@ import matplotlib.animation as animation
 from matplotlib.animation import FuncAnimation
 plt.style.use('seaborn-pastel')
  
- 
-fig = plt.figure()
-ax = plt.axes(xlim=(0, 4), ylim=(-2, 2))
-line, = ax.plot([], [], lw=3)
-
-def init():
-    line.set_data([], [])
-    return line,
 
 def animate(k):
   plt.clf()
@@ -79,10 +71,7 @@ def animate(k):
   plt.legend ( " Numerical " )
   plt.plot (x , u [ k ] , marker = '*')
   plt.legend ( " Analytical " )
-  plt.show ()
 
-ani = animation . FuncAnimation ( plt.figure (0) , animate , frames = y.shape[0] , interval =100)
+ani = animation.FuncAnimation( plt.figure (0) , animate , frames = y.shape[0] , interval =100)
 
-plt.show ()
-#anim.save('bloch_sphere.mp4', fps=20)
-ani.save('transfer.mp4')
+ani.save('t.mp4')
